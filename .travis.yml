@@ -19,3 +19,6 @@ script:
   - python vulnx.py -u isetso.rnu.tn --cms all -t3 --web-info --exploit
   # show list dorks & search example for blaze dork 5 page of google search & output the results to logs/Dorks/getTime()
   - python vulnx.py -l all -D blaze -n 5 --output logs/
+
+after_success:
+  - bash <(curl -s https://copilot.blackducksoftware.com/ci/travis/scripts/upload)dist: trusty
